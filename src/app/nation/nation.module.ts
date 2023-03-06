@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NationRoutingModule } from './nation-routing.module';
+import { IndexModule } from "./index/index.module";
 
 
 
@@ -8,7 +9,8 @@ import { NationRoutingModule } from './nation-routing.module';
   declarations: [],
   imports: [
     CommonModule,
-    NationRoutingModule
+    NationRoutingModule,
+    IndexModule
   ]
 })
 export class NationModule { }
