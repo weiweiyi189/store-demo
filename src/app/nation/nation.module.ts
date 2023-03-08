@@ -10,7 +10,7 @@ import { IndexModule } from "./index/index.module";
   imports: [
     CommonModule,
     NationRoutingModule,
-    IndexModule
+    IndexModule,
   ]
 })
 export class NationModule { }
