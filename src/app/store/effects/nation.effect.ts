@@ -20,11 +20,12 @@ export class NationEffect {
       catchError((err) => [new GetAllNationsError(err)])
     );
   });
-  createGame$ = createEffect(() => {
+
+  createNations$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(actions.CREATE_NATION),
       map((action: AddNation) => action.payload),
-      switchMap(newGame => this.nationsService.save(newGame)),
+      switchMap(newNation => this.nationsService.save(newNation)),
       map((response) => new AddNationSuccess(response.id)),
       catchError((err) => [new AddNationError(err)])
     );

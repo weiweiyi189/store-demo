@@ -9,7 +9,7 @@ import { AddNation, GetAllNations } from '../../store/actions';
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
-  styleUrls: ['./index.component.css']
+  styleUrls: ['./index.component.css'],
 })
 export class IndexComponent implements OnInit {
   nations: Nation[] | undefined;
@@ -18,8 +18,7 @@ export class IndexComponent implements OnInit {
 
   model = {} as Nation;
 
-  constructor(private store: Store<ElementsState>) {
-  }
+  constructor(private store: Store<ElementsState>) {}
 
   ngOnInit(): void {
     this.store.dispatch(new GetAllNations());
@@ -27,7 +26,6 @@ export class IndexComponent implements OnInit {
       this.nations = data;
     });
   }
-
 
   save(): void {
     if (confirm('确认要新增吗?')) {
@@ -37,5 +35,4 @@ export class IndexComponent implements OnInit {
       this.model = {} as Nation;
     }
   }
-
 }
